@@ -1,3 +1,38 @@
+2021.05, released June 6th, 2021
+
+	Various fixes.
+
+	Disable PIC/PIE support for Nios2 because of glibc issues
+
+	Defconfigs: Minnowboard max: Fix X11 and mesa3d configuration
+
+	Updated/fixed packages: apache, beaglev-ddrinit,
+	beaglev-secondboot, capnproto, dc3dd, directfb, efibootmgr,
+	ffmpeg, gptfdisk, go, gupnp, hostapd, iftop,
+	intel-mediadriver, libcamera, libcutl, libesmtp, libkcapi,
+	libraw, lttng-tools, lvm2, mimic, mono-gtksharp3, mpv,
+	netperf, odb, qt5base, uclibc, uftrace, unscd, vlc,
+	xdriver_xf86-video-fbturbo
+
+	New packages: python3-cffi, python3-cryptography, python3-pip,
+	python3-pycparser, python3-six
+
+2021.05-rc3, released May 31th, 2021
+
+	Fixes all over the tree.
+
+	meson: Explicitly disable PIE support (b_pie) as it is handled
+	by the toolchain wrapper.
+
+	Updated/fixed packages: boost, dhcp, expat, gdb, hwloc, imagemagick,
+	libcurl, libopenh264, llvm, lz4, mpv, nginx, paho-mqtt-c, pifmrds,
+	pipewire, python-bluezero, python-pillow, qemu, strace, uhd, vlc,
+	webkitgtk
+
+	Issues resolved (http://bugs.uclibc.org):
+
+	#13821: Wrong url for libnfsidmap package
+
 2021.05-rc2, released May 22th, 2021
 
 	Fixes all over the tree.
