@@ -133,12 +133,9 @@ else
 LIBARCHIVE_CONF_OPTS += --without-zstd
 endif
 
-# The only user of host-libarchive needs zlib support
-HOST_LIBARCHIVE_DEPENDENCIES = host-zlib
+# Build host package with zlib, zstd and openssl host packages
+HOST_LIBARCHIVE_DEPENDENCIES = host-zlib host-zstd host-openssl
 HOST_LIBARCHIVE_CONF_OPTS = \
-	--disable-bsdtar \
-	--disable-bsdcpio \
-	--disable-bsdcat \
 	--disable-acl \
 	--disable-xattr \
 	--without-bz2lib \
@@ -149,9 +146,7 @@ HOST_LIBARCHIVE_CONF_OPTS = \
 	--without-lzo2 \
 	--without-mbedtls \
 	--without-nettle \
-	--without-openssl \
-	--without-lzma \
-	--without-zstd
+	--without-lzma
 
 $(eval $(autotools-package))
 $(eval $(host-autotools-package))
