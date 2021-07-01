@@ -36,6 +36,13 @@ CAIRO_CONF_OPTS = \
 
 CAIRO_DEPENDENCIES = host-pkgconf fontconfig pixman
 
+# retrolx
+# add libdrm dependency if enabled because of libmali mess
+ifeq ($(BR2_PACKAGE_LIBDRM),y)
+CAIRO_DEPENDENCIES += libdrm
+CAIRO_CONF_ENV += LIBS="-ldrm"
+endif
+
 # Just the bare minimum to make other host-* packages happy
 HOST_CAIRO_CONF_OPTS = \
 	--enable-trace=no \
