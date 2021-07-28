@@ -1,3 +1,5 @@
+sha256  a5dbb770c4b5f9d7a58100fc577385632d0519332b45f0169b020697d9edb1ce  linux-5.14-rc3.tar.gz
+
 # From https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
 sha256  951c7c3ee07b393925d75699eccc20c9929cbe484fcdc047de79d9def33c1053  linux-5.13.5.tar.xz
 sha256  e9381cd3525a02f5b895f74147e2440be443ecd45484c6c64075046bc6f94c73  linux-5.12.19.tar.xz
