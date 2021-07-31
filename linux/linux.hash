@@ -1,8 +1,8 @@
 sha256  a5dbb770c4b5f9d7a58100fc577385632d0519332b45f0169b020697d9edb1ce  linux-5.14-rc3.tar.gz
 
 # From https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256  a62c1720efff2692a29da4c07748088f766cc43e275d165611e4d2581ba25276  linux-5.13.6.tar.xz
-sha256  bf50c63261847187eca4a1793e5df5c1355b21697409589f6ca03e32b629be44  linux-5.10.54.tar.xz
+sha256  f91e561053afe454afce8a6dcc7f8319010bfe2fa17aeea1d8566f61760be439  linux-5.13.7.tar.xz
+sha256  7581113dad67a095bc5cc32b457e1a9283f91579e248f3b547a7302157fe8889  linux-5.10.55.tar.xz
 
 # From https://www.kernel.org/pub/linux/kernel/v4.x/sha256sums.asc
 sha256  8bb2eba489889d7811e5454135d9ee1c1cd05ef7c96e9bea500d7e30154ba3dd  linux-4.4.273.tar.xz
