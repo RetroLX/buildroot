@@ -5,7 +5,7 @@
 ################################################################################
 
 # Keep the version and patches in sync with bluez5_utils-headers
-BLUEZ5_UTILS_VERSION = 5.58
+BLUEZ5_UTILS_VERSION = 5.60
 BLUEZ5_UTILS_SOURCE = bluez-$(BLUEZ5_UTILS_VERSION).tar.xz
 BLUEZ5_UTILS_SITE = $(BR2_KERNEL_MIRROR)/linux/bluetooth
 BLUEZ5_UTILS_INSTALL_STAGING = YES
@@ -23,6 +23,7 @@ BLUEZ5_UTILS_CONF_OPTS = \
 	--enable-tools \
 	--enable-library \
 	--disable-cups \
+	--disable-manpages \
 	--with-dbusconfdir=/etc
 
 BLUEZ5_UTILS_CONF_OPTS += --enable-deprecated
@@ -41,6 +42,12 @@ else
 BLUEZ5_UTILS_CONF_OPTS += --disable-client
 endif
 
+ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_MONITOR),y)
+BLUEZ5_UTILS_CONF_OPTS += --enable-monitor
+else
+BLUEZ5_UTILS_CONF_OPTS += --disable-monitor
+endif
+
 # experimental plugins
 ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_EXPERIMENTAL),y)
 BLUEZ5_UTILS_CONF_OPTS += --enable-experimental
@@ -48,11 +55,32 @@ else
 BLUEZ5_UTILS_CONF_OPTS += --disable-experimental
 endif
 
+# enable audio plugins (a2dp and avrcp)
+ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_AUDIO),y)
+BLUEZ5_UTILS_CONF_OPTS += --enable-a2dp --enable-avrcp
+else
+BLUEZ5_UTILS_CONF_OPTS += --disable-a2dp --disable-avrcp
+endif
+
 # enable health plugin
 ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HEALTH),y)
 BLUEZ5_UTILS_CONF_OPTS += --enable-health
 else
 BLUEZ5_UTILS_CONF_OPTS += --disable-health
+endif
+
+# enable hid plugin
+ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HID),y)
+BLUEZ5_UTILS_CONF_OPTS += --enable-hid
+else
+BLUEZ5_UTILS_CONF_OPTS += --disable-hid
+endif
+
+# enable hog plugin
+ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HOG),y)
+BLUEZ5_UTILS_CONF_OPTS += --enable-hog
+else
+BLUEZ5_UTILS_CONF_OPTS += --disable-hog
 endif
 
 # enable mesh profile
@@ -69,6 +97,13 @@ BLUEZ5_UTILS_CONF_OPTS += --enable-midi
 BLUEZ5_UTILS_DEPENDENCIES += alsa-lib
 else
 BLUEZ5_UTILS_CONF_OPTS += --disable-midi
+endif
+
+# enable network plugin
+ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_NETWORK),y)
+BLUEZ5_UTILS_CONF_OPTS += --enable-network
+else
+BLUEZ5_UTILS_CONF_OPTS += --disable-network
 endif
 
 # enable nfc plugin
