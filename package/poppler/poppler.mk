@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-POPPLER_VERSION = 0.84.0
+POPPLER_VERSION = 21.07.0
 POPPLER_SOURCE = poppler-$(POPPLER_VERSION).tar.xz
 POPPLER_SITE = http://poppler.freedesktop.org
 POPPLER_DEPENDENCIES = fontconfig host-pkgconf
