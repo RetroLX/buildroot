@@ -12,13 +12,13 @@ ALSA_PLUGINS_LICENSE_FILES = COPYING
 ALSA_PLUGINS_DEPENDENCIES = host-pkgconf alsa-lib
 
 ALSA_PLUGINS_CONF_OPTS = \
+	--with-plugindir=/usr/lib/alsa-lib \
+	--localstatedir=/var \
 	--disable-jack \
-	--disable-usbstream \
-	--disable-pulseaudio \
 	--disable-libav \
 	--disable-maemo-plugin \
 	--disable-maemo-resource-manager \
-	--with-speex=no
+	--with-speex=builtin
 
 ifeq ($(BR2_PACKAGE_LIBSAMPLERATE),y)
 ALSA_PLUGINS_CONF_OPTS += --enable-samplerate
