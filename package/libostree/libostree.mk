@@ -22,13 +22,14 @@ LIBOSTREE_CONF_OPTS += \
 	--disable-gtk-doc-pdf \
 	--disable-man
 
-ifeq ($(BR2_PACKAGE_GOBJECT_INTROSPECTION),y)
-LIBOSTREE_DEPENDENCIES += gobject-introspection
-LIBOSTREE_CONF_OPTS += --enable-introspection
-LIBOSTREE_MAKE_OPTS = INTROSPECTION_SCANNER_ENV=
-else
+# retrolx hack
+#ifeq ($(BR2_PACKAGE_GOBJECT_INTROSPECTION),y)
+#LIBOSTREE_DEPENDENCIES += gobject-introspection
+#LIBOSTREE_CONF_OPTS += --enable-introspection
+#LIBOSTREE_MAKE_OPTS = INTROSPECTION_SCANNER_ENV=
+#else
 LIBOSTREE_CONF_OPTS += --disable-introspection
-endif
+#endif
 
 ifeq ($(BR2_PACKAGE_OPENSSL),y)
 LIBOSTREE_CONF_OPTS += --with-openssl

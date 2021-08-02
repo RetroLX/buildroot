@@ -27,12 +27,13 @@ POLKIT_CONF_OPTS = \
 	--disable-libsystemd-login \
 	--with-duktape
 
-ifeq ($(BR2_PACKAGE_GOBJECT_INTROSPECTION),y)
-POLKIT_CONF_OPTS += --enable-introspection
-POLKIT_DEPENDENCIES += gobject-introspection
-else
+#retrolx hack
+#ifeq ($(BR2_PACKAGE_GOBJECT_INTROSPECTION),y)
+#POLKIT_CONF_OPTS += --enable-introspection
+#POLKIT_DEPENDENCIES += gobject-introspection
+#else
 POLKIT_CONF_OPTS += --disable-introspection
-endif
+#endif
 
 ifeq ($(BR2_PACKAGE_LINUX_PAM),y)
 POLKIT_DEPENDENCIES += linux-pam
