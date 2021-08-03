@@ -9,7 +9,7 @@ ALSA_PLUGINS_SOURCE = alsa-plugins-$(ALSA_PLUGINS_VERSION).tar.bz2
 ALSA_PLUGINS_SITE = https://www.alsa-project.org/files/pub/plugins
 ALSA_PLUGINS_LICENSE = LGPL-2.1+
 ALSA_PLUGINS_LICENSE_FILES = COPYING
-ALSA_PLUGINS_DEPENDENCIES = host-pkgconf alsa-lib
+ALSA_PLUGINS_DEPENDENCIES = host-pkgconf alsa-lib alsa-utils
 
 ALSA_PLUGINS_CONF_OPTS = \
 	--with-plugindir=/usr/lib/alsa-lib \
