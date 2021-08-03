@@ -40,17 +40,26 @@ config BR2_PACKAGE_BLUEZ5_UTILS_CLIENT
 
 config BR2_PACKAGE_BLUEZ5_UTILS_MONITOR
 	bool "build monitor utility"
-	default y
 	help
 	  Build monitor utility btmon.
 
+config BR2_PACKAGE_BLUEZ5_UTILS_TOOLS
+	bool "build tools"
+	help
+	  Build tools like bluemoon, btattach, hex2hcd, l2test,
+	  l2ping, mpris-proxy, rctest.
+
 config BR2_PACKAGE_BLUEZ5_UTILS_DEPRECATED
 	bool "install deprecated tools"
-	depends on BR2_PACKAGE_BLUEZ5_UTILS_CLIENT
+	depends on BR2_PACKAGE_BLUEZ5_UTILS_CLIENT || BR2_PACKAGE_BLUEZ5_UTILS_TOOLS
 	help
-	  Build deprecated tools. These currently include:
+	  Build deprecated tools.
+
+	  When "build tools" is selected these tools are installed:
 	  hciattach, hciconfig, hcitool, hcidump, rfcomm, sdptool,
-	  ciptool, gatttool.
+	  ciptool.
+
+	  When CLI client is enabled "gatttool" is installed.
 
 config BR2_PACKAGE_BLUEZ5_UTILS_EXPERIMENTAL
 	bool "build experimental tools"
@@ -61,7 +70,6 @@ config BR2_PACKAGE_BLUEZ5_UTILS_EXPERIMENTAL
 
 config BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_AUDIO
 	bool "build audio plugins (a2dp and avrcp)"
-	default y
 	help
 	  Build plugins for audio profiles (for A2DP and AVRCP).
 
@@ -72,14 +80,12 @@ config BR2_PACKAGE_BLUEZ5_PLUGINS_HEALTH
 
 config BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HID
 	bool "build hid plugin"
-	default y
 	select BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HOG
 	help
 	  Build plugin for HID (input) profiles.
 
 config BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HOG
 	bool "build hog plugin"
-	default y
 	help
 	  Build plugin for HoG (input) profiles.
 
@@ -121,6 +127,7 @@ config BR2_PACKAGE_BLUEZ5_PLUGINS_SAP
 config BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_SIXAXIS
 	bool "build sixaxis plugin"
 	depends on BR2_PACKAGE_HAS_UDEV
+	select BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HID # runtime
 	help
 	  Build sixaxis plugin (support Sony Dualshock
 	  controller)
@@ -136,6 +143,7 @@ config BR2_PACKAGE_BLUEZ5_UTILS_TEST
 config BR2_PACKAGE_BLUEZ5_UTILS_TOOLS_HID2HCI
 	bool "build hid2hci tool"
 	depends on BR2_PACKAGE_HAS_UDEV
+	select BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_HID # runtime
 	help
 	  Build hid2hci tool
 

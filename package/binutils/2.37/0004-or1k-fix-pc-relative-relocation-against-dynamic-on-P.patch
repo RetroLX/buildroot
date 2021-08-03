@@ -1,4 +1,4 @@
-From 9af93e143a7fbdb75aa1ed37277f9250eb111628 Mon Sep 17 00:00:00 2001
+From 203b80f8dbdd3ddb860114b03351a0dea28c978f Mon Sep 17 00:00:00 2001
 From: Giulio Benetti <giulio.benetti@benettiengineering.com>
 Date: Sat, 10 Jul 2021 17:57:34 +0200
 Subject: [PATCH] or1k: fix pc-relative relocation against dynamic on PC
@@ -32,7 +32,7 @@ Signed-off-by: Giulio Benetti <giulio.benetti@benettiengineering.com>
  1 file changed, 12 insertions(+)
 
 diff --git a/bfd/elf32-or1k.c b/bfd/elf32-or1k.c
-index 4ae7f324d33..4f9092539f5 100644
+index 32063ab0289..67252394173 100644
 --- a/bfd/elf32-or1k.c
 +++ b/bfd/elf32-or1k.c
 @@ -1543,6 +1543,18 @@ or1k_elf_relocate_section (bfd *output_bfd,
@@ -55,5 +55,5 @@ index 4ae7f324d33..4f9092539f5 100644
  	case R_OR1K_LO13:
  	case R_OR1K_SLO13:
 -- 
-2.25.1
+2.31.1
 
