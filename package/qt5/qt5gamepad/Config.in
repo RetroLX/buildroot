@@ -1,0 +1,9 @@
+config BR2_PACKAGE_QT5GAMEPAD
+	bool "qt5gamepad"
+	select BR2_PACKAGE_QT5BASE_GUI
+	help
+	  Qt Gamepad is an add-on library that enables Qt applications to support the use of gamepad hardware and in some cases remote control equipment. 
+	  The module provides both QML and C++ interfaces. The primary target audience are embedded devices with fullscreen user interfaces, and mobile applications 
+	  targeting TV-like form factors.
+
+	  https://doc.qt.io/qt-5/qtgamepad-index.html
