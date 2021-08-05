@@ -171,8 +171,8 @@ MESA3D_CONF_OPTS += -Dopengl=true
 
 # libva and mesa3d have a circular dependency
 # we do not need libva support in mesa3d, therefore disable this option
-# batocera
-ifeq ($(BR2_PACKAGE_LIBVA),y)
+# RetroLX
+ifeq ($(BR2_PACKAGE_LIBVA)$(BR2_PACKAGE_XORG7),yy)
 MESA3D_CONF_OPTS += -Dgallium-va=enabled
 MESA3D_DEPENDENCIES += libva
 
