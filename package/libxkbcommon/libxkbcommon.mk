@@ -28,7 +28,6 @@ LIBXKBCOMMON_CONF_OPTS += -Denable-wayland=true
 LIBXKBCOMMON_CONF_OPTS += -Dxkb-config-root=/usr/share/X11/xkb
 #LIBXKBCOMMON_CONF_OPTS += -Dx-locale-root=/usr/share/X11/locale
 LIBXKBCOMMON_CONF_OPTS += -Dx-locale-root=/usr/share/locale
-LIBXKBCOMMON_DEPENDENCIES += weston
 endif
 
 $(eval $(meson-package))
