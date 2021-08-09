@@ -39,6 +39,10 @@ comment "KMS/DRM video driver needs libdrm"
 config BR2_PACKAGE_SDL2_WAYLAND
 	bool "wayland video driver"
 	depends on BR2_PACKAGE_WAYLAND
+	depends on BR2_PACKAGE_WAYLANDPP
+	depends on BR2_PACKAGE_WAYLAND_PROTOCOLS
+	depends on BR2_PACKAGE_LIBEPOXY
+	depends on BR2_PACKAGE_WESTON
 
 comment "Wayland video driver needs wayland enabled"
 	depends on !BR2_PACKAGE_WAYLAND
