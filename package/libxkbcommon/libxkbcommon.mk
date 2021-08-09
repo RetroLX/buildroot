@@ -24,6 +24,7 @@ LIBXKBCOMMON_CONF_OPTS += -Denable-x11=false
 endif
 
 ifeq ($(BR2_PACKAGE_WESTON),y)
+LIBXKBCOMMON_DEPENDENCIES += wayland-protocols
 LIBXKBCOMMON_CONF_OPTS += -Denable-wayland=true
 LIBXKBCOMMON_CONF_OPTS += -Dxkb-config-root=/usr/share/X11/xkb
 #LIBXKBCOMMON_CONF_OPTS += -Dx-locale-root=/usr/share/X11/locale

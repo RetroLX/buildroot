@@ -58,6 +58,10 @@ endif
 else
 MPV_CONF_OPTS += --disable-gbm --disable-egl-drm
 endif
+# RetroLX
+ifeq ($(BR2_PACKAGE_HAS_LIBMALI),y)
+MPV_CONF_OPTS += --enable-gbm --enable-egl-drm
+endif
 
 # jack support
 # It also requires 64-bit sync intrinsics
