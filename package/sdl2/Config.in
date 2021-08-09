@@ -36,6 +36,13 @@ config BR2_PACKAGE_SDL2_KMSDRM
 comment "KMS/DRM video driver needs libdrm"
 	depends on !BR2_PACKAGE_LIBDRM
 
+config BR2_PACKAGE_SDL2_WAYLAND
+	bool "wayland video driver"
+	depends on BR2_PACKAGE_WAYLAND
+
+comment "Wayland video driver needs wayland enabled"
+	depends on !BR2_PACKAGE_WAYLAND
+
 config BR2_PACKAGE_SDL2_OPENGL
 	bool "OpenGL (GLX)"
 	depends on BR2_PACKAGE_HAS_LIBGL
