@@ -4,11 +4,9 @@
 #
 ################################################################################
 
-#SDL2_VERSION = 2.0.14
-#SDL2_SOURCE = SDL2-$(SDL2_VERSION).tar.gz
-#SDL2_SITE = http://www.libsdl.org/release
-SDL2_VERSION = b5b7804ed42b325fa34ea9ef262f7a604334a1b5
-SDL2_SITE = $(call github,libsdl-org,SDL,$(SDL2_VERSION))
+SDL2_VERSION = 2.0.16
+SDL2_SOURCE = SDL2-$(SDL2_VERSION).tar.gz
+SDL2_SITE = http://www.libsdl.org/release
 SDL2_LICENSE = Zlib
 SDL2_LICENSE_FILES = COPYING.txt
 SDL2_CPE_ID_VENDOR = libsdl
