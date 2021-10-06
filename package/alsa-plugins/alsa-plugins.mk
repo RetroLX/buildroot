@@ -29,4 +29,8 @@ else
 ALSA_PLUGINS_CONF_OPTS += --disable-samplerate
 endif
 
+ifeq ($(BR2_PACKAGE_PULSEAUDIO),y)
+ALSA_PLUGINS_DEPENDENCIES += pulseaudio
+endif
+
 $(eval $(autotools-package))
