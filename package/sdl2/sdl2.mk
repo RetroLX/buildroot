@@ -182,7 +182,7 @@ SDL2_CONF_OPTS += --disable-video-kmsdrm
 endif
 
 ifeq ($(BR2_PACKAGE_SDL2_WAYLAND),y)
-SDL2_DEPENDENCIES += wayland waylandpp wayland-protocols libepoxy
+SDL2_DEPENDENCIES += wayland waylandpp wayland-protocols libepoxy libxkbcommon
 SDL2_CONF_OPTS += --enable-video-wayland
 else
 SDL2_CONF_OPTS += --disable-video-wayland
