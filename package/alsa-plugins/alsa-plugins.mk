@@ -18,6 +18,7 @@ ALSA_PLUGINS_CONF_OPTS = \
 	--disable-libav \
 	--disable-maemo-plugin \
 	--disable-maemo-resource-manager \
+	--disable-pulseaudio \
 	--with-speex=builtin
 
 ifeq ($(BR2_PACKAGE_LIBSAMPLERATE),y)
