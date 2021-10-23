@@ -18,8 +18,7 @@ SDL2_CONF_OPTS += \
 	--disable-rpath \
 	--disable-arts \
 	--disable-esd \
-	--disable-dbus \
-	--disable-pulseaudio
+	--disable-dbus
 
 # We're patching configure.ac but autoreconf breaks the build
 # The script only uses autoconf, not automake or libtool
@@ -169,6 +168,13 @@ SDL2_DEPENDENCIES += alsa-lib
 SDL2_CONF_OPTS += --enable-alsa
 else
 SDL2_CONF_OPTS += --disable-alsa
+endif
+
+ifeq ($(BR2_PACKAGE_PULSEAUDIO),y)
+SDL2_DEPENDENCIES += pulseaudio
+SDL2_CONF_OPTS += --enable-pulseaudio
+else
+SDL2_CONF_OPTS += --disable-pulseaudio
 endif
 
 ifeq ($(BR2_PACKAGE_SDL2_KMSDRM),y)

@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PIPEWIRE_VERSION = 0.3.38
+PIPEWIRE_VERSION = 0.3.39
 PIPEWIRE_SITE = $(call github,PipeWire,pipewire,$(PIPEWIRE_VERSION))
 PIPEWIRE_LICENSE = MIT, LGPL-2.1+ (libspa-alsa), GPL-2.0 (libjackserver)
 PIPEWIRE_LICENSE_FILES = COPYING LICENSE
@@ -73,6 +73,13 @@ PIPEWIRE_CONF_OPTS += -Dpipewire-jack=enabled -Djack=enabled
 PIPEWIRE_DEPENDENCIES += jack2
 else
 PIPEWIRE_CONF_OPTS += -Dpipewire-jack=disabled -Djack=disabled
+endif
+
+ifeq ($(BR2_PACKAGE_LIBFREEAPTX),y)
+PIPEWIRE_CONF_OPTS += -Dbluez5-codec-aptx=enabled
+PIPEWIRE_DEPENDENCIES += libfreeaptx
+else
+PIPEWIRE_CONF_OPTS += -Dbluez5-codec-aptx=disabled
 endif
 
 ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS)$(BR2_PACKAGE_SBC),yy)
