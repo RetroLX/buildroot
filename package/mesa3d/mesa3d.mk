@@ -286,6 +286,10 @@ ifeq ($(BR2_PACKAGE_LIBGLVND),y)
 MESA3D_CONF_OPTS += -Dglvnd=true
 endif
 
+ifeq ($(BR2_PACKAGE_MESA3D_GALLIUM_DRIVER_CROCUS),y)
+MESA3D_CONF_OPTS += -Dprefer-crocus=true
+endif
+
 # batocera icd.@0@.json vulkan files
 define MESA3D_VULKANJSON_X86_64
         $(SED) s+"host_machine.cpu()"+"'x86_64'"+ $(@D)/src/intel/vulkan/meson.build $(@D)/src/amd/vulkan/meson.build
