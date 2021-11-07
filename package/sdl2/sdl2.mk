@@ -43,18 +43,22 @@ define SDL2_FIX_WAYLAND_SCANNER_PATH
 	sed -i "s+/usr/bin/wayland-scanner+$(HOST_DIR)/usr/bin/wayland-scanner+g" $(@D)/Makefile
 endef
 
+define SDL2_FIX_CONFIGURE_PATHS
+	sed -i "s+/host/bin/\.\.+/host+g" $(@D)/config.log
+	sed -i "s+/host/bin/\.\.+/host+g" $(@D)/config.status
+	sed -i "s+/host/bin/\.\.+/host+g" $(@D)/libtool
+	sed -i "s+/host/bin/\.\.+/host+g" $(@D)/Makefile
+	sed -i "s+/host/bin/\.\.+/host+g" $(@D)/sdl2-config
+	sed -i "s+/host/bin/\.\.+/host+g" $(@D)/sdl2.pc
+endef
+
 SDL2_POST_CONFIGURE_HOOKS += SDL2_FIX_WAYLAND_SCANNER_PATH
+SDL2_POST_CONFIGURE_HOOKS += SDL2_FIX_CONFIGURE_PATHS
 
 SDL2_POST_INSTALL_STAGING_HOOKS += SDL2_FIX_SDL2_CONFIG_CMAKE
 
 # We must enable static build to get compilation successful.
 SDL2_CONF_OPTS += --enable-static
-
-# batocera
-# sdl2 set the rpi video output from the host name
-ifeq ($(BR2_PACKAGE_RPI_USERLAND),y)
-SDL2_CONF_OPTS += --host=arm-raspberry-linux-gnueabihf
-endif
 
 ifeq ($(BR2_PACKAGE_HAS_UDEV),y)
 SDL2_DEPENDENCIES += udev
