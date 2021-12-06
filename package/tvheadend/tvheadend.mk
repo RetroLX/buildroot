@@ -12,7 +12,7 @@ TVHEADEND_DEPENDENCIES = \
 	host-gettext \
 	host-pkgconf \
 	host-pngquant \
-	$(if $(BR2_PACKAGE_PYTHON3),host-python3,host-python) \
+	host-python3 \
 	openssl
 
 ifeq ($(BR2_PACKAGE_AVAHI),y)
@@ -154,7 +154,7 @@ define TVHEADEND_CONFIGURE_CMDS
 			--arch="$(ARCH)" \
 			--cpu="$(GCC_TARGET_CPU)" \
 			--nowerror \
-			--python="$(HOST_DIR)/bin/python" \
+			--python="$(HOST_DIR)/bin/python3" \
 			--enable-dvbscan \
 			--enable-bundle \
 			--enable-pngquant \
@@ -194,8 +194,10 @@ TVHEADEND_POST_INSTALL_TARGET_HOOKS += TVHEADEND_CLEAN_SHARE
 #    to the other users (because there will be crendentials in there)
 
 define TVHEADEND_INSTALL_INIT_SYSV
-	$(INSTALL) -D package/tvheadend/etc.default.tvheadend $(TARGET_DIR)/etc/default/tvheadend
-	$(INSTALL) -D package/tvheadend/S99tvheadend          $(TARGET_DIR)/etc/init.d/S99tvheadend
+	$(INSTALL) -D package/tvheadend/etc.default.tvheadend \
+		$(TARGET_DIR)/etc/default/tvheadend
+	$(INSTALL) -D package/tvheadend/S99tvheadend \
+		$(TARGET_DIR)/etc/init.d/S99tvheadend
 endef
 
 define TVHEADEND_USERS

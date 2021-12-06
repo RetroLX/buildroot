@@ -34,6 +34,7 @@ config BR2_PACKAGE_SDL2_KMSDRM
 	depends on BR2_PACKAGE_LIBDRM
 	# requires libgbm from mesa3d
 	depends on BR2_PACKAGE_MESA3D_OPENGL_EGL || BR2_PACKAGE_HAS_LIBMALI
+	#depends on BR2_PACKAGE_MESA3D_GBM
 
 comment "KMS/DRM video driver needs libdrm"
 	depends on !BR2_PACKAGE_LIBDRM

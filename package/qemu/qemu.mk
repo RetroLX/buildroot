@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-QEMU_VERSION = 6.0.0
+QEMU_VERSION = 6.1.0
 QEMU_SOURCE = qemu-$(QEMU_VERSION).tar.xz
 QEMU_SITE = http://download.qemu.org
 QEMU_LICENSE = GPL-2.0, LGPL-2.1, MIT, BSD-3-Clause, BSD-2-Clause, Others/BSD-1c
@@ -167,6 +167,10 @@ else
 QEMU_OPTS += --disable-usb-redir
 endif
 
+ifeq ($(BR2_STATIC_LIBS),y)
+QEMU_OPTS += --static
+endif
+
 # Override CPP, as it expects to be able to call it like it'd
 # call the compiler.
 define QEMU_CONFIGURE_CMDS
@@ -186,6 +190,7 @@ define QEMU_CONFIGURE_CMDS
 			--enable-kvm \
 			--enable-attr \
 			--enable-vhost-net \
+			--disable-bpf \
 			--disable-bsd-user \
 			--disable-containers \
 			--disable-xen \
@@ -215,7 +220,6 @@ define QEMU_CONFIGURE_CMDS
 			--disable-opengl \
 			--disable-vhost-user-blk-server \
 			--disable-virtiofsd \
-			--disable-tests \
 			$(QEMU_OPTS)
 endef
 
@@ -351,6 +355,7 @@ define HOST_QEMU_CONFIGURE_CMDS
 		--extra-ldflags="$(HOST_LDFLAGS)" \
 		--meson=$(HOST_DIR)/bin/meson \
 		--ninja=$(HOST_DIR)/bin/ninja \
+		--disable-bpf \
 		--disable-bzip2 \
 		--disable-containers \
 		--disable-curl \
@@ -363,7 +368,6 @@ define HOST_QEMU_CONFIGURE_CMDS
 		--disable-vnc-jpeg \
 		--disable-vnc-png \
 		--disable-vnc-sasl \
-		--disable-tests \
 		$(HOST_QEMU_OPTS)
 endef
 

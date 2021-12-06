@@ -144,7 +144,7 @@ endif
 
 ###############################################################################
 
-comment "Legacy options removed in 2021.08"
+comment "Legacy options removed in 2021.11"
 
 config BR2_OPENJDK_VERSION_LTS
 	bool "OpenJDK LTS version was renamed to OpenJDK 11"
@@ -162,11 +162,120 @@ config BR2_OPENJDK_VERSION_LATEST
 	  OpenJDK 16.x is no longer mainted, so the option has been
 	  removed. Use OpenJDK 17.x instead.
 
+config BR2_PACKAGE_MPD_TIDAL
+	bool "mpd tidal option removed"
+	select BR2_LEGACY
+	help
+	  tidal has been removed from mpd since version 0.22.10.
+
+config BR2_PACKAGE_MROUTED_RSRR
+	bool "RSRR for RSVP removed in mrouted v4.4"
+	select BR2_LEGACY
+	help
+	  The RSRR configure option and feature was dropped in upstream
+	  mrouted as of v4.4.  This feature was marked as experimental
+	  since its inception well before v4.0 and was never deployed
+	  in the field outside of academia.
+
+config BR2_BINUTILS_VERSION_CSKY
+	bool "binutils csky version removed"
+	select BR2_LEGACY
+	help
+	  Support for binutils csky version has been removed.
+
+config BR2_GCC_VERSION_CSKY
+	bool "gcc csky version removed"
+	select BR2_LEGACY
+	help
+	  Support for gcc csky version has been removed.
+
+config BR2_PACKAGE_CANFESTIVAL
+	bool "canfestival package removed"
+	select BR2_LEGACY
+	help
+	  This package has been removed as it is unmaintained since
+	  November 2017.
+
+config BR2_PACKAGE_NMAP_NDIFF
+	bool "The ndiff utility has been removed"
+	select BR2_LEGACY
+	select BR2_PACKAGE_PYTHON_PYNDIFF
+	help
+	  The ndiff utility provided by nmap requires python2 which is
+	  deprecated. The same functionality is provided by the python
+	  package pyndiff.
+
+config BR2_GDB_VERSION_8_3
+	bool "gdb version 8.3.x removed"
+	select BR2_LEGACY
+	help
+	  gdb 8.3.x has been removed, use a newer version instead.
+
+config BR2_PACKAGE_PYTHON_MELD3
+	bool "python-meld3 package removed"
+	select BR2_LEGACY
+	help
+	  This package has been removed as it is unmaintained since
+	  April 2020.
+
+config BR2_PACKAGE_STRONGSWAN_EAP
+	bool "strongswan EAP plugins now individually selectable"
+	select BR2_LEGACY
+	help
+	  The various EAP plugins are now individually selectable.
+
 config BR2_PACKAGE_GNURADIO_PAGER
 	bool "gnuradio gr-flex support removed"
 	select BR2_LEGACY
 	help
 	  gr-flex has been removed from gnuradio since version 3.8.0.0.
+
+config BR2_KERNEL_HEADERS_5_11
+	bool "kernel headers version 5.11.x are no longer supported"
+	select BR2_LEGACY
+	help
+	  Version 5.11.x of the Linux kernel headers are no longer
+	  maintained upstream and are now removed.
+
+config BR2_KERNEL_HEADERS_5_12
+	bool "kernel headers version 5.12.x are no longer supported"
+	select BR2_LEGACY
+	help
+	  Version 5.12.x of the Linux kernel headers are no longer
+	  maintained upstream and are now removed.
+
+config BR2_KERNEL_HEADERS_5_13
+	bool "kernel headers version 5.13.x are no longer supported"
+	select BR2_LEGACY
+	help
+	  Version 5.13.x of the Linux kernel headers are no longer
+	  maintained upstream and are now removed.
+
+comment "Legacy options removed in 2021.08"
+
+config BR2_TARGET_GRUB2_BUILTIN_MODULES
+	string "the grub2 builtin modules has been renamed"
+	help
+	  This option has been split to separate the builtin modules
+	  between BR2_TARGET_GRUB2_BUILTIN_MODULES_PC and
+	  BR2_TARGET_GRUB2_BUILTIN_MODULES_EFI.
+
+config BR2_TARGET_GRUB2_BUILTIN_MODULES_WRAP
+	bool
+	default y if BR2_TARGET_GRUB2_BUILTIN_MODULES != ""
+	select BR2_LEGACY
+
+config BR2_TARGET_GRUB2_BUILTIN_CONFIG
+	string "the grub2 builtin configuration has been renamed"
+	help
+	  This option has been split to separate the builtin
+	  configuration between BR2_TARGET_GRUB2_BUILTIN_CONFIG_PC and
+	  BR2_TARGET_GRUB2_BUILTIN_CONFIG_EFI.
+
+config BR2_TARGET_GRUB2_BUILTIN_CONFIG_WRAP
+	bool
+	default y if BR2_TARGET_GRUB2_BUILTIN_CONFIG != ""
+	select BR2_LEGACY
 
 config BR2_PACKAGE_LIBMCRYPT
 	bool "libmcrypt package was removed"
