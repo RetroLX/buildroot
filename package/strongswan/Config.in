@@ -93,30 +93,6 @@ config BR2_PACKAGE_STRONGSWAN_TNCCS_20
 config BR2_PACKAGE_STRONGSWAN_TNCCS_DYNAMIC
 	bool "Enable dynamic TNCCS protocol discovery module"
 
-config BR2_PACKAGE_STRONGSWAN_EAP
-	bool "Enable EAP protocols"
-	select BR2_PACKAGE_GMP
-	help
-	  Enable various EAP protocols:
-	    - mschapv2
-	    - tls
-	    - ttls
-	    - peap
-	    - sim
-	    - sim-file
-	    - aka
-	    - aka-3gpp2
-	    - simaka-sql
-	    - simaka-pseudonym
-	    - simaka-reauth
-	    - identity
-	    - md5
-	    - gtc
-	    - tnc
-	    - dynamic
-	    - radius
-
-if BR2_PACKAGE_STRONGSWAN_EAP
 config BR2_PACKAGE_STRONGSWAN_SYSTIME_FIX
 	bool "Enable systime-fix plugin"
 
