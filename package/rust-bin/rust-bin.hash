@@ -1,9 +1,9 @@
 # From https://static.rust-lang.org/dist/rust-1.54.0-i686-unknown-linux-gnu.tar.xz.sha256
 # Verified using https://static.rust-lang.org/dist/rust-1.54.0-i686-unknown-linux-gnu.tar.xz.asc
 sha256  9c3baf8ec849978b0206262fc402ac9d24fdb2a8ae7b5d785b09022dbdbc20e8  rust-1.54.0-i686-unknown-linux-gnu.tar.xz
-# From https://static.rust-lang.org/dist/rust-1.54.0-x86_64-unknown-linux-gnu.tar.xz.sha256
-# Verified using https://static.rust-lang.org/dist/rust-1.54.0-x86_64-unknown-linux-gnu.tar.xz.asc
-sha256  9fb4a22b74120b81a4d896326b02d121d5f996b3288580c346ea55a52d8946a9  rust-1.54.0-x86_64-unknown-linux-gnu.tar.xz
+# From https://static.rust-lang.org/dist/rust-1.57.0-x86_64-unknown-linux-gnu.tar.xz.sha256
+# Verified using https://static.rust-lang.org/dist/rust-1.57.0-x86_64-unknown-linux-gnu.tar.xz.asc
+sha256  590772474cb5d24c3d85b8fb770246e4a6b7dd8b13a2ab1db2c50a3965a36e1a  rust-1.57.0-x86_64-unknown-linux-gnu.tar.xz
 # From https://static.rust-lang.org/dist/rust-std-1.54.0-aarch64-unknown-linux-gnu.tar.xz.sha256
 # Verified using https://static.rust-lang.org/dist/rust-std-1.54.0-aarch64-unknown-linux-gnu.tar.xz.asc
 sha256  a1a77737d218087eb7d3613adcde2c9e383d758cdf128646a0ee63396145270b  rust-std-1.54.0-aarch64-unknown-linux-gnu.tar.xz
@@ -91,9 +91,9 @@ sha256  8b9ac3e1947036d6f2a3939edd279631fc1b0a260507343a8b3e9ecd448fe738  rust-s
 # From https://static.rust-lang.org/dist/rust-std-1.54.0-sparc64-unknown-linux-gnu.tar.xz.sha256
 # Verified using https://static.rust-lang.org/dist/rust-std-1.54.0-sparc64-unknown-linux-gnu.tar.xz.asc
 sha256  6ce101e3c5b1bae6006c61a18dcb5685fe0ff57ea8c00a36e6bf95f748abe5f6  rust-std-1.54.0-sparc64-unknown-linux-gnu.tar.xz
-# From https://static.rust-lang.org/dist/rust-std-1.54.0-x86_64-unknown-linux-gnu.tar.xz.sha256
-# Verified using https://static.rust-lang.org/dist/rust-std-1.54.0-x86_64-unknown-linux-gnu.tar.xz.asc
-sha256  a22e19859b3c5032daac1633637546a986c51bdfa3ad0db6e394e6cc461f466b  rust-std-1.54.0-x86_64-unknown-linux-gnu.tar.xz
+# From https://static.rust-lang.org/dist/rust-std-1.57.0-x86_64-unknown-linux-gnu.tar.xz.sha256
+# Verified using https://static.rust-lang.org/dist/rust-std-1.57.0-x86_64-unknown-linux-gnu.tar.xz.asc
+sha256  ccdc72d06c90841b7227ec3630337881eeda3da5fbe87328d2e9d705f6f8016c  rust-std-1.57.0-x86_64-unknown-linux-gnu.tar.xz
 # From https://static.rust-lang.org/dist/rust-std-1.54.0-x86_64-unknown-linux-musl.tar.xz.sha256
 # Verified using https://static.rust-lang.org/dist/rust-std-1.54.0-x86_64-unknown-linux-musl.tar.xz.asc
 sha256  c2de24eb3e524c0fdd1e8116f578c103035da1ece1e4c06efab67999180eefe8  rust-std-1.54.0-x86_64-unknown-linux-musl.tar.xz
