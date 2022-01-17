@@ -36,7 +36,7 @@ sha256  4811caac5c61fced4e1b8690196cc4bc853acf4378ca93d6d1a391360bbccb28  rust-s
 sha256  7823b95fc3fcd7cc47ba767e2e917c9efbafed2d5ad0b74e7c087600bd72e54f  rust-std-1.57.0-armv7-unknown-linux-gnueabi.tar.xz
 # From https://static.rust-lang.org/dist/rust-std-1.57.0-armv7-unknown-linux-musleabihf.tar.xz.sha256
 # Verified using https://static.rust-lang.org/dist/rust-std-1.57.0-armv7-unknown-linux-musleabihf.tar.xz.asc
-sha256  f9a650a3970dbc321e8979dd87ed02fd8f9d03901c3fb1a87724f3c214eb6e57  rust-std-1.57.0-armv7-unknown-linux-musleabihf.tar.xz
+sha256  efef9a9cbf7d6d6f62dd2c24b409e1fca6d65bcda460b3cd99dab3cfb78448bd  rust-std-1.57.0-armv7-unknown-linux-musleabihf.tar.xz
 # From https://static.rust-lang.org/dist/rust-std-1.57.0-armv7-unknown-linux-musleabi.tar.xz.sha256
 # Verified using https://static.rust-lang.org/dist/rust-std-1.57.0-armv7-unknown-linux-musleabi.tar.xz.asc
 sha256  19a80cfaf18c15eaa1c112312c0cb0ccfd14179407118b35735cdcfc1cc4c60f  rust-std-1.57.0-armv7-unknown-linux-musleabi.tar.xz
