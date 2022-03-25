@@ -1056,6 +1056,7 @@ F:	configs/asus_tinker_rk3288_defconfig
 F:	configs/olimex_a*
 F:	package/at/
 F:	package/binutils/
+F:	package/cryptsetup/
 F:	package/erlang-jiffy/
 F:	package/gcc/
 F:	package/harfbuzz/
@@ -1756,9 +1757,6 @@ F:	package/rpi-wifi-firmware/
 F:	package/tzdata/
 F:	package/zic/
 
-N:	Martin Hicks <mort@bork.org>
-F:	package/cryptsetup/
-
 N:	Martin Kepplinger <martink@posteo.de>
 F:	package/tslib/
 F:	package/x11r7/xdriver_xf86-input-tslib/
@@ -2098,6 +2096,8 @@ F:	package/lightning/
 F:	package/umtprd/
 
 N:	Pedro Aguilar <paguilar@paguilar.org>
+F:	package/bdwgc/
+F:	package/guile/
 F:	package/libunistring/
 
 N:	Peter Korsgaard <peter@korsgaard.com>
@@ -2886,6 +2886,7 @@ F:	package/circus/
 F:	package/dhcpcd/
 F:	package/feh/
 F:	package/giblib/
+F:	package/hostapd/
 F:	package/imlib2/
 F:	package/jquery-datetimepicker/
 F:	package/jquery-sidebar/
@@ -2895,6 +2896,8 @@ F:	package/libical/
 F:	package/libmbim/
 F:	package/libndp/
 F:	package/libnftnl/
+F:	package/libqmi/
+F:	package/libqrtr-glib/
 F:	package/libsoc/
 F:	package/libsocketcan/
 F:	package/libubox/
@@ -2914,6 +2917,7 @@ F:	package/swig/
 F:	package/qt5/qt5serialbus/
 F:	package/sdparm/
 F:	package/ti-utils/
+F:	package/wpa_supplicant/
 F:	package/x11r7/xapp_xconsole/
 F:	package/x11r7/xapp_xinput-calibrator/
 F:	package/zlog/
