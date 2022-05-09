@@ -1,5 +1,5 @@
-# From https://lists.freedesktop.org/archives/dri-devel/2021-May/307025.html
-sha256  c554cef03b033636a975543eab363cc19081cb464595d3da1ec129f87370f888  libdrm-2.4.107.tar.xz
+# From https://lwn.net/Articles/885005/
+sha256  eecee4c4b47ed6d6ce1a9be3d6d92102548ea35e442282216d47d05293cf9737  libdrm-2.4.110.tar.xz
 
 # Hash for license file
 sha256  a69e38953c20a88845cc739c05dd604da4c977844b872e126c91a0ca2e1385b7  xf86drm.c
