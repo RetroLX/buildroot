@@ -4,12 +4,13 @@
 #
 ################################################################################
 
-LIBVIRT_VERSION = 7.7.0
+LIBVIRT_VERSION = 7.10.0
 LIBVIRT_SITE = https://libvirt.org/sources
 LIBVIRT_SOURCE = libvirt-$(LIBVIRT_VERSION).tar.xz
 LIBVIRT_LICENSE = LGPL-2.1+
 LIBVIRT_LICENSE_FILES = COPYING
 LIBVIRT_CPE_ID_VENDOR = redhat
+LIBVIRT_INSTALL_STAGING = YES
 LIBVIRT_DEPENDENCIES = \
 	host-libxslt \
 	host-nfs-utils \
@@ -38,7 +39,6 @@ LIBVIRT_CONF_OPTS = \
 	-Ddriver_ch=disabled \
 	-Ddriver_esx=disabled \
 	-Ddriver_hyperv=disabled \
-	-Ddriver_interface=enabled \
 	-Ddriver_libxl=disabled \
 	-Ddriver_openvz=disabled \
 	-Ddriver_remote=enabled \
@@ -195,7 +195,10 @@ endif
 
 ifeq ($(BR2_PACKAGE_LIBVIRT_DAEMON),y)
 # Network is used by daemon, only
-LIBVIRT_CONF_OPTS += -Ddriver_libvirtd=enabled -Ddriver_network=enabled
+LIBVIRT_CONF_OPTS += \
+	-Ddriver_interface=enabled \
+	-Ddriver_libvirtd=enabled \
+	-Ddriver_network=enabled
 
 ifeq ($(BR2_PACKAGE_LIBSSH),y)
 LIBVIRT_CONF_OPTS += -Dlibssh=enabled
@@ -234,7 +237,10 @@ endif
 
 else # BR2_PACKAGE_LIBVIRT_DAEMON
 
-LIBVIRT_CONF_OPTS += -Ddriver_libvirtd=disabled -Ddriver_network=disabled
+LIBVIRT_CONF_OPTS += \
+	-Ddriver_interface=disabled \
+	-Ddriver_libvirtd=disabled \
+	-Ddriver_network=disabled
 
 endif
 

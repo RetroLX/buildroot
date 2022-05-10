@@ -13,7 +13,7 @@ diff --git a/configure.ac b/configure.ac
 index 4e08118c46..40b1f9bac1 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -4217,7 +4217,7 @@ fi
+@@ -4230,7 +4230,7 @@ fi
  
  AC_MSG_RESULT($ac_cv_buggy_getaddrinfo)
  

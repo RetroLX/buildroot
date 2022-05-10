@@ -2,8 +2,7 @@ config BR2_PACKAGE_KODI_ARCH_SUPPORTS
 	bool
 	default y if BR2_PACKAGE_FFMPEG_ARCH_SUPPORTS
 	# i386: needs sse (see upstream PR 10351)
-	# batocera
-	#depends on !(BR2_i386 && !BR2_X86_CPU_HAS_SSE)
+	depends on !(BR2_i386 && !BR2_X86_CPU_HAS_SSE)
 	depends on BR2_USE_MMU # libcdio, and others
 
 comment "kodi needs python3 w/ .py modules, a uClibc or glibc toolchain w/ C++, threads, wchar, dynamic library, gcc >= 4.9"
@@ -23,18 +22,8 @@ config BR2_PACKAGE_KODI_PLATFORM_SUPPORTS_GBM
 	bool
 	default y
 	depends on BR2_PACKAGE_HAS_LIBGL || BR2_PACKAGE_HAS_LIBGLES
-	depends on BR2_PACKAGE_MESA3D_GBM || BR2_PACKAGE_HAS_LIBMALI
-	depends on BR2_PACKAGE_HAS_UDEV # libinput
-        depends on !BR2_PACKAGE_RPI_USERLAND
-	select BR2_PACKAGE_KODI_PLATFORM_SUPPORTS
-
-config BR2_PACKAGE_KODI_PLATFORM_SUPPORTS_RBPI
-	bool
-	default y
-	# List of valid CPUs can be found here:
-	# https://github.com/xbmc/xbmc/blob/Krypton/project/cmake/scripts/rbpi/ArchSetup.cmake#L12
-	depends on BR2_arm1176jzf_s || BR2_cortex_a7 || BR2_cortex_a53
-	depends on BR2_PACKAGE_RPI_USERLAND
+	depends on BR2_PACKAGE_HAS_LIBGBM
+	depends on BR2_PACKAGE_LIBGBM_HAS_FEATURE_DMA_BUF
 	depends on BR2_PACKAGE_HAS_UDEV # libinput
 	select BR2_PACKAGE_KODI_PLATFORM_SUPPORTS
 
@@ -150,7 +139,7 @@ config BR2_PACKAGE_KODI_AVAHI
 
 config BR2_PACKAGE_KODI_BLUEZ
 	bool "bluetooth"
-	depends on BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_4 # bluez5_utils
+	depends on BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_18 # bluez5_utils hid plugin
 	depends on BR2_TOOLCHAIN_HAS_SYNC_4 # bluez5_utils
 	select BR2_PACKAGE_BLUEZ5_UTILS
 	select BR2_PACKAGE_BLUEZ5_UTILS_PLUGINS_AUDIO
@@ -158,9 +147,9 @@ config BR2_PACKAGE_KODI_BLUEZ
 	help
 	    Enable bluetooth support
 
-comment "bluetooth support needs a toolchain w/ headers >= 3.4"
+comment "bluetooth support needs a toolchain w/ headers >= 3.18"
 	depends on BR2_TOOLCHAIN_HAS_SYNC_4
-	depends on !BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_4
+	depends on !BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_18
 
 config BR2_PACKAGE_KODI_DBUS
 	bool "dbus"
@@ -349,10 +338,12 @@ menu "PVR addons"
 	source "package/kodi-pvr-njoy/Config.in"
 	source "package/kodi-pvr-octonet/Config.in"
 	source "package/kodi-pvr-pctv/Config.in"
+	source "package/kodi-pvr-plutotv/Config.in"
 	source "package/kodi-pvr-stalker/Config.in"
 	source "package/kodi-pvr-vbox/Config.in"
 	source "package/kodi-pvr-vdr-vnsi/Config.in"
 	source "package/kodi-pvr-vuplus/Config.in"
+	source "package/kodi-pvr-waipu/Config.in"
 	source "package/kodi-pvr-wmc/Config.in"
 	source "package/kodi-pvr-zattoo/Config.in"
 endmenu

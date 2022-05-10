@@ -4,8 +4,9 @@
 #
 ################################################################################
 
-PIPEWIRE_VERSION = 0.3.48
-PIPEWIRE_SITE = $(call github,PipeWire,pipewire,$(PIPEWIRE_VERSION))
+PIPEWIRE_VERSION = 0.3.45
+PIPEWIRE_SOURCE = pipewire-$(PIPEWIRE_VERSION).tar.bz2
+PIPEWIRE_SITE = https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/$(PIPEWIRE_VERSION)
 PIPEWIRE_LICENSE = MIT, LGPL-2.1+ (libspa-alsa), GPL-2.0 (libjackserver)
 PIPEWIRE_LICENSE_FILES = COPYING LICENSE
 PIPEWIRE_INSTALL_STAGING = YES
@@ -27,7 +28,9 @@ PIPEWIRE_CONF_OPTS += \
 	-Dvideoconvert=enabled \
 	-Dvideotestsrc=enabled \
 	-Dvolume=enabled \
-	-Dsession-managers=[]
+	-Dsession-managers=[] \
+	-Dlibcanberra=disabled \
+	-Dlv2=disabled
 
 ifeq ($(BR2_PACKAGE_DBUS),y)
 PIPEWIRE_CONF_OPTS += -Ddbus=enabled
@@ -81,8 +84,7 @@ else
 PIPEWIRE_CONF_OPTS += -Dalsa=disabled -Dpipewire-alsa=disabled
 endif
 
-# avahi support needs avahi-client, which needs avahi-daemon and dbus
-ifeq ($(BR2_PACKAGE_AVAHI)$(BR2_PACKAGE_AVAHI_DAEMON)$(BR2_PACKAGE_DBUS),yyy)
+ifeq ($(BR2_PACKAGE_AVAHI_LIBAVAHI_CLIENT),y)
 PIPEWIRE_CONF_OPTS += -Davahi=enabled
 PIPEWIRE_DEPENDENCIES += avahi
 else
@@ -134,6 +136,13 @@ else
 PIPEWIRE_CONF_OPTS += -Dlibcamera=disabled
 endif
 
+ifeq ($(BR2_PACKAGE_XLIB_LIBX11),y)
+PIPEWIRE_CONF_OPTS += -Dx11=enabled
+PIPEWIRE_DEPENDENCIES += xlib_libX11
+else
+PIPEWIRE_CONF_OPTS += -Dx11=disabled
+endif
+
 ifeq ($(BR2_PACKAGE_LIBUSB),y)
 PIPEWIRE_CONF_OPTS += -Dlibusb=enabled
 PIPEWIRE_DEPENDENCIES += libusb
@@ -178,6 +187,13 @@ PIPEWIRE_CONF_OPTS += -Decho-cancel-webrtc=enabled
 PIPEWIRE_DEPENDENCIES += webrtc-audio-processing
 else
 PIPEWIRE_CONF_OPTS += -Decho-cancel-webrtc=disabled
+endif
+
+ifeq ($(BR2_PACKAGE_OPENSSL),y)
+PIPEWIRE_CONF_OPTS += -Draop=enabled
+PIPEWIRE_DEPENDENCIES += openssl
+else
+PIPEWIRE_CONF_OPTS += -Draop=disabled
 endif
 
 define PIPEWIRE_USERS
