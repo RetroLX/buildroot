@@ -49,7 +49,7 @@ else
 LIBKRB5_CONF_OPTS += --without-ldap
 endif
 
-ifeq ($(BR2_PACKAGE_OPENSSL),y)
+ifeq ($(BR2_PACKAGE_LIBOPENSSL),y)
 LIBKRB5_CONF_OPTS += \
 	--enable-pkinit \
 	--with-crypto-impl=openssl \
@@ -80,11 +80,6 @@ endif
 
 ifneq ($(BR2_TOOLCHAIN_HAS_THREADS),y)
 LIBKRB5_CONF_OPTS += --disable-thread-support
-endif
-
-# batocera
-ifeq ($(BR2_SHARED_STATIC_LIBS),y)
-LIBKRB5_CONF_OPTS += --disable-static
 endif
 
 $(eval $(autotools-package))
