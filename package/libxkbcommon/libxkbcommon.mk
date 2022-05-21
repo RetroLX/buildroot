@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBXKBCOMMON_VERSION = 1.3.1
+LIBXKBCOMMON_VERSION = 1.4.0
 LIBXKBCOMMON_SITE = https://xkbcommon.org/download
 LIBXKBCOMMON_SOURCE = libxkbcommon-$(LIBXKBCOMMON_VERSION).tar.xz
 LIBXKBCOMMON_LICENSE = MIT/X11
@@ -27,8 +27,12 @@ ifeq ($(BR2_PACKAGE_WESTON),y)
 LIBXKBCOMMON_DEPENDENCIES += wayland-protocols
 LIBXKBCOMMON_CONF_OPTS += -Denable-wayland=true
 LIBXKBCOMMON_CONF_OPTS += -Dxkb-config-root=/usr/share/X11/xkb
-#LIBXKBCOMMON_CONF_OPTS += -Dx-locale-root=/usr/share/X11/locale
 LIBXKBCOMMON_CONF_OPTS += -Dx-locale-root=/usr/share/locale
+
+ifeq ($(BR2_PACKAGE_LIBXKBCOMMON_TOOLS),y)
+LIBXKBCOMMON_CONF_OPTS += -Denable-tools=true
+else
+LIBXKBCOMMON_CONF_OPTS += -Denable-tools=false
 endif
 
 $(eval $(meson-package))
