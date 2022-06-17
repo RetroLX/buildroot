@@ -173,6 +173,13 @@ else
 SDL2_CONF_OPTS += --disable-pulseaudio
 endif
 
+ifeq ($(BR2_PACKAGE_PIPEWIRE),y)
+SDL2_DEPENDENCIES += pipewire
+SDL2_CONF_OPTS += --enable-pipewire
+else
+SDL2_CONF_OPTS += --disable-pipewire
+endif
+
 ifeq ($(BR2_PACKAGE_SDL2_KMSDRM),y)
 SDL2_DEPENDENCIES += libdrm
 ifeq ($(BR2_PACKAGE_MESA3D),y)
