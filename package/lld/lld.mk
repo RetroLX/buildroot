@@ -5,7 +5,6 @@
 ################################################################################
 
 # LLVM, Clang and lld should be version bumped together
-# retrolx bump to 13.0.0
 LLD_VERSION = 13.0.0
 LLD_SITE = https://github.com/llvm/llvm-project/releases/download/llvmorg-$(LLD_VERSION)
 LLD_SOURCE = lld-$(LLD_VERSION).src.tar.xz
