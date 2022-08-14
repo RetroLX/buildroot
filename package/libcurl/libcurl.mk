@@ -187,3 +187,7 @@ LIBCURL_POST_INSTALL_TARGET_HOOKS += LIBCURL_TARGET_CLEANUP
 endif
 
 $(eval $(autotools-package))
+
+HOST_LIBCURL_CONF_OPTS += --with-openssl
+
+$(eval $(host-autotools-package))
