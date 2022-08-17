@@ -20,7 +20,7 @@ QT6BASE_CONF_OPTS = \
 	-GNinja \
 	-DQT_HOST_PATH=$(HOST_DIR) \
 	-DFEATURE_gui=ON \
-	-DFEATURE_concurrent=OFF \
+	-DFEATURE_concurrent=ON \
 	-DFEATURE_xml=ON \
 	-DFEATURE_sql=OFF \
 	-DFEATURE_testlib=OFF \
@@ -54,7 +54,7 @@ HOST_QT6BASE_DEPENDENCIES = \
 HOST_QT6BASE_CONF_OPTS = \
 	-GNinja \
 	-DFEATURE_gui=OFF \
-	-DFEATURE_concurrent=OFF \
+	-DFEATURE_concurrent=ON \
 	-DFEATURE_xml=ON \
 	-DFEATURE_sql=OFF \
 	-DFEATURE_testlib=OFF \
