@@ -17,10 +17,6 @@ KISMET_DEPENDENCIES = \
 	zlib
 KISMET_LICENSE = GPL-2.0+
 KISMET_LICENSE_FILES = LICENSE
-
-# We're patching configure.ac
-KISMET_AUTORECONF = YES
-
 KISMET_SELINUX_MODULES = kismet
 
 KISMET_CONF_OPTS = --disable-debuglibs

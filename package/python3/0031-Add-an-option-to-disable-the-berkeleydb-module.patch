@@ -1,4 +1,4 @@
-From 368a582879f3d757e3527071fd95a956bb272bd8 Mon Sep 17 00:00:00 2001
+From cf4d7fd9f7cb6c1ced32ee323b2b5755640051b7 Mon Sep 17 00:00:00 2001
 From: Bernd Kuhls <bernd.kuhls@t-online.de>
 Date: Sat, 11 Apr 2020 22:01:40 +0200
 Subject: [PATCH] Add an option to disable the berkeleydb module

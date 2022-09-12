@@ -1,4 +1,4 @@
-From 7dea1b79fbb905dd69862862f327cc0f25cd93c2 Mon Sep 17 00:00:00 2001
+From 962deb43f5f340a8472d432ae8e6d61186f9040e Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 22 Feb 2017 17:31:51 -0800
 Subject: [PATCH] Add an option to disable the curses module

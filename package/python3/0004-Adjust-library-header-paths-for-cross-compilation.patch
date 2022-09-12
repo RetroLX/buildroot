@@ -1,4 +1,4 @@
-From 8d2bc6a84a253c7ba2995a3e3be17ea113c228e2 Mon Sep 17 00:00:00 2001
+From 61af65485f1dade4aa08d0cf2b24082aeda24c51 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 23 Dec 2015 11:33:14 +0100
 Subject: [PATCH] Adjust library/header paths for cross-compilation

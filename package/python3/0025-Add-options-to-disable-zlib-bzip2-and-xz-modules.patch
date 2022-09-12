@@ -1,4 +1,4 @@
-From 4d87cebaff75a19cd7ccf20f1c89abec5a5bce8d Mon Sep 17 00:00:00 2001
+From 146730a04dfe98e3d7971ebf5410801ceae88e11 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Tue, 7 Mar 2017 23:31:11 +0100
 Subject: [PATCH] Add options to disable zlib, bzip2 and xz modules

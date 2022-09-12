@@ -22,13 +22,6 @@ else
 ZCHUNK_CONF_OPTS += -Dwith-curl=disabled
 endif
 
-ifeq ($(BR2_PACKAGE_LIBCURL),y)
-ZCHUNK_DEPENDENCIES += libcurl
-ZCHUNK_CONF_OPTS += -Dwith-curl=enabled
-else
-ZCHUNK_CONF_OPTS += -Dwith-curl=disabled
-endif
-
 ifeq ($(BR2_PACKAGE_OPENSSL),y)
 ZCHUNK_DEPENDENCIES += openssl
 ZCHUNK_CONF_OPTS += -Dwith-openssl=enabled

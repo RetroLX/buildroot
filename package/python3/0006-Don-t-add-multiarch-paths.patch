@@ -1,4 +1,4 @@
-From e87dececb9bc2f4b1cba7f31d67ca2aaecbb52d8 Mon Sep 17 00:00:00 2001
+From f5933b8f973cd11698b52d535a10d0474e49f5a5 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 23 Dec 2015 11:36:27 +0100
 Subject: [PATCH] Don't add multiarch paths
@@ -17,7 +17,7 @@ Signed-off-by: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/setup.py b/setup.py
-index 254c351519..5bf39f8a51 100644
+index ec3ba60607..e27620035c 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -830,10 +830,10 @@ class PyBuildExt(build_ext):
@@ -33,5 +33,5 @@ index 254c351519..5bf39f8a51 100644
  
      def init_inc_lib_dirs(self):
 -- 
-2.20.1
+2.25.1
 

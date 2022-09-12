@@ -1,4 +1,4 @@
-From 20ff7301b496efe529e2b313cac4d7af626f5051 Mon Sep 17 00:00:00 2001
+From 3bb693408eda77dda145ec5fecee56ea73031e9f Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 Date: Sat, 18 Aug 2018 10:54:56 +0200
 Subject: [PATCH] Add an option to disable uuid module

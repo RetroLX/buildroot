@@ -1,4 +1,4 @@
-From e3b96113ae2b5a0c3f775d5a9550dbbcffb702dd Mon Sep 17 00:00:00 2001
+From f1b15834045d0641c43014b970721df066fa71f7 Mon Sep 17 00:00:00 2001
 From: Maxime Ripard <maxime.ripard@free-electrons.com>
 Date: Wed, 22 Feb 2017 17:45:14 -0800
 Subject: [PATCH] Add an option to disable IDLE

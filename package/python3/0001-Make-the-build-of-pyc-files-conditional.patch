@@ -1,4 +1,4 @@
-From f63cc3031e775b556443c0f5b2725e530823dc49 Mon Sep 17 00:00:00 2001
+From 322724e166d7ec0393aec577c12fdf6ef2b61e1d Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 22 Feb 2017 16:21:31 -0800
 Subject: [PATCH] Make the build of pyc files conditional
@@ -15,7 +15,7 @@ Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
  2 files changed, 8 insertions(+)
 
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index 11230fa563..1ed9ad65d2 100644
+index 77f91e72b1..0c809f3d8a 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
 @@ -1600,6 +1600,7 @@ libinstall:	build_all $(srcdir)/Modules/xxmodule.c
@@ -35,7 +35,7 @@ index 11230fa563..1ed9ad65d2 100644
  		$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt
  	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
 diff --git a/configure.ac b/configure.ac
-index 823252be69..4e08118c46 100644
+index d60f05251a..1ee5a09588 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -1110,6 +1110,12 @@ fi
@@ -52,5 +52,5 @@ index 823252be69..4e08118c46 100644
  # library that we build, but we do not want to link against it (we
  # will find it with a -framework option). For this reason there is an
 -- 
-2.20.1
+2.25.1
 

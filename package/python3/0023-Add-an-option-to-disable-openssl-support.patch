@@ -1,4 +1,4 @@
-From 9fb639fba83cddfbda20819d58df77bdccf6ba1d Mon Sep 17 00:00:00 2001
+From 90ed5c692b8b5596ca0b3ae1436276c8181251d8 Mon Sep 17 00:00:00 2001
 From: Nicolas Cavallari <nicolas.cavallari@green-communications.fr>
 Date: Wed, 22 Feb 2017 17:55:59 -0800
 Subject: [PATCH] Add an option to disable openssl support.

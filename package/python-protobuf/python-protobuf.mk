@@ -14,4 +14,3 @@ PYTHON_PROTOBUF_SETUP_TYPE = setuptools
 PYTHON_PROTOBUF_SUBDIR = python
 
 $(eval $(python-package))
-$(eval $(host-python-package))

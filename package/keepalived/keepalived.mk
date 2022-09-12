@@ -14,9 +14,6 @@ KEEPALIVED_CONF_OPTS = --disable-hardening
 # We're patching configure.ac
 KEEPALIVED_AUTORECONF = YES
 
-# 0002-dbus-fix-policy-to-not-be-overly-broad.patch
-KEEPALIVED_IGNORE_CVES += CVE-2021-44225
-
 ifeq ($(BR2_PACKAGE_JSON_C),y)
 KEEPALIVED_DEPENDENCIES += json-c
 KEEPALIVED_CONF_OPTS += --enable-json

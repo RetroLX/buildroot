@@ -1,4 +1,4 @@
-From c246223473b49a719b765520068aaf812f1fe6ca Mon Sep 17 00:00:00 2001
+From 049e7a51e1ffd0d28d6608c707ab4b54e816d338 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Tue, 7 Mar 2017 23:29:05 +0100
 Subject: [PATCH] Add an option to disable the readline module

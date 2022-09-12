@@ -1,4 +1,4 @@
-From 9da015fd909bd50a24479bba9a94cb3d1228043d Mon Sep 17 00:00:00 2001
+From df7c95b4ceecf390b961d843a556c470ac9080b2 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 22 Feb 2017 16:33:22 -0800
 Subject: [PATCH] Add infrastructure to disable the build of certain extensions
@@ -44,7 +44,7 @@ Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
  3 files changed, 11 insertions(+), 2 deletions(-)
 
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index 1ed9ad65d2..6eacfd6961 100644
+index 0c809f3d8a..7c3dde8dd4 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
 @@ -218,6 +218,8 @@ FILEMODE=	644
@@ -75,7 +75,7 @@ index 1ed9ad65d2..6eacfd6961 100644
  		--install-scripts=$(BINDIR) \
  		--install-platlib=$(DESTSHARED) \
 diff --git a/configure.ac b/configure.ac
-index 40b1f9bac1..5b897d8e46 100644
+index c2445edc88..73d66167de 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -3091,6 +3091,8 @@ LIBS="$withval $LIBS"
@@ -88,7 +88,7 @@ index 40b1f9bac1..5b897d8e46 100644
  AC_MSG_CHECKING(for --with-system-expat)
  AC_ARG_WITH(system_expat,
 diff --git a/setup.py b/setup.py
-index 9a5887b59f..b88d0bb007 100644
+index 770866bca7..b6c829b3a5 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -58,7 +58,10 @@ with warnings.catch_warnings():
@@ -104,5 +104,5 @@ index 9a5887b59f..b88d0bb007 100644
  # --list-module-names option used by Tools/scripts/generate_module_names.py
  LIST_MODULE_NAMES = False
 -- 
-2.20.1
+2.25.1
 

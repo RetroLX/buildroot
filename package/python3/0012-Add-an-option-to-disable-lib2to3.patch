@@ -1,4 +1,4 @@
-From bc0681be87109e3e5c35e0bdd225143607350fb6 Mon Sep 17 00:00:00 2001
+From f034b1b0f33a7bd4dde23f0bc1fa8e00e3518c9d Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 22 Feb 2017 17:15:31 -0800
 Subject: [PATCH] Add an option to disable lib2to3

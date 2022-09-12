@@ -1,4 +1,4 @@
-From 2eb05b69bb21df7884686ca2620612ac0f95b894 Mon Sep 17 00:00:00 2001
+From d5fe81cbd51da2a84ed89d1e4c80d921d4efce26 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 23 Dec 2015 11:51:31 +0100
 Subject: [PATCH] Add an option to disable decimal

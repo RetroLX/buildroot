@@ -1,4 +1,4 @@
-From 8b77e7ce6723e11c1891befe7e6413d8328e8f67 Mon Sep 17 00:00:00 2001
+From ad6b66b34f71ff6b60b3be5f6fd3e781cdeecd59 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 22 Feb 2017 17:23:42 -0800
 Subject: [PATCH] Add an option to disable the tk module

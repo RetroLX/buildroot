@@ -1,4 +1,4 @@
-From 57e14d395860a781d0b43b1ef3e2a4a8b04bbf80 Mon Sep 17 00:00:00 2001
+From a65e5d3caf8e076d531191164c23c6240461f675 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 22 Feb 2017 17:07:56 -0800
 Subject: [PATCH] Add an option to disable pydoc

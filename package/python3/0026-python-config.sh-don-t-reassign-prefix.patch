@@ -1,4 +1,4 @@
-From 1ab6b1fb17c1988baca6b9c578f8de33c44c1a17 Mon Sep 17 00:00:00 2001
+From 106d9378c61e7fa9cad0a63ba068668d54cd11b8 Mon Sep 17 00:00:00 2001
 From: Matt Weber <matthew.weber@rockwellcollins.com>
 Date: Fri, 6 Oct 2017 09:54:15 -0500
 Subject: [PATCH] python-config.sh: don't reassign ${prefix}

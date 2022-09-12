@@ -1,3 +1,50 @@
+2022.08, released September 10th, 2022
+
+	Fixes all over the tree.
+
+	Autotools: Drop --runstatedir=/run as it causes build issues
+	with older packages
+
+	Defconfigs: rockpro64: Change to mainline ATF to fix build issue
+
+	Updated/fixed packages: dhcpd, fwup, gcc, gdb, go, linux-tools,
+	minidlna, mosquitto, mv-ddr-mervell, networkd-dispatcher,
+	optee-os, polkit, python-pillow, python3, sconeserver, uuu,
+	wolfssl
+
+2022.08-rc2, released September 1st, 2022
+
+	Fixes all over the tree.
+
+	dependencies: Ensure 'find' and 'xargs' are available on the
+	build host.
+
+	A large number of typo fixes.
+
+	Defconfigs: bananapi m1, olimex a20/a33/lime: Use standard FPU
+	configuration, pine64_sopine: Use mainline ATF to fix build
+
+	Updated/fixed packages: ace, alsa-utils, busybox, cups,
+	dbus-broker, directfb, domoticz, drbd-utils, edk2,
+	edk2-platforms, ffmpeg, freeradius-server, freeswitch, gauche,
+	gcc, gdb, glibc, gnutls, gst1-plugins-bad, gst1-plugins-good,
+	hawktracer, igd-ethercat, imagemagick, intel-mediadriver,
+	jack2, jose, jpeg, jquery-ui-themes, kodi, libcamera, libdill,
+	libgit2, libglvnd, libgpg-error, libgpgme, libinput, libp11,
+	libsepol, libtirpc, libvirtd, libvncserver, libwpe, libzlib,
+	linux, linux-tools-perf, llvm, lshw, makedumpfile,
+	mali-driver, memcached, minetest, mutt, ne10, netsniff-ng,
+	ntpsec, ocrad, ola, opencv4, openocd, opensc, optee-os,
+	pcsc-lite, postgresql, protobuf, pulseaudio, python-autobahn,
+	python-paho-mqtt, python-protobuf, python-pygame, python3, qemu,
+	qoriq-cadence-dp-firmware, qt5doc, qt6base, ranger, rng-tools,
+	rsync, rustc, sconeserver, sdl2, snort, sqlite, squid,
+	stress-ng, strongswan, sunxi-mali-utgard-driver, sysdig,
+	sysklogd, syslinux, syslog-ng, tcf-agent, tcpreplay,
+	tesseract-ocr, uacme, uboot-tools, uclibc, udpcast, usbguard,
+	v4l2loopback, vim, webkitgtk, wolftpm, wpewebkit, xenomai,
+	xserver_xorg-server, zeek, zerofree
+
 2022.08-rc1, released August 12th, 2022
 
 	Fixes all over the tree and new features.
@@ -86,6 +133,43 @@
 	#14891: sudo: group setup fails since commit  9b7f8da96b
 	#14881: Watchdogd Package missing INSTALL_STAGING
 	#14876: arm-trusted-firmware can no longer be  compiled with fPIE
+
+2022.05.2, released August 31st, 2022
+
+	Important / security related fixes.
+
+	dependencies: Ensure 'cmp' is available on the build host.
+
+	pkg-utils: The KCONFIG_ENABLE_OPT macro used to enforce a specific
+	Kconfig option to be enabled (E.G. for kernel options needed by
+	packages) no longer changes a =m (modular) with =y (built in).
+
+	check-host-rpath: Silence readelf warnings when clang is used
+
+	GCC 10.x updated to 10.4.0
+
+	Defconfigs: Kria kv260: Fix u-boot configuration
+
+	Updated/fixed packages: apg, arm-trusted-firmware, assimp,
+	bayer2rgb-neon, bind, bird, cog, cwiid, diffutils, freerdp,
+	fluidsynth, gcc, gdk-pixbuf, glibc, glslsandbox-player,
+	gnupg2, gtest, i2pd, jack2, jquery-validation, jszip,
+	kvm-unit-tests, libbsd, libcamera, libcurl, libest, libiio,
+	libkrb5, libopenssl, libp11, libpsl, libwebsockets, localedef,
+	luasyslog, lxc, mbedtls, mstpd, mutt, netdata, netsniff-ng,
+	nodejs, nvidia-driver, ola, openssl, opkg-utils, paho-mqtt-c,
+	pango, pcsc-lite, perl, perl-crypt-openssl-rsa, pimd, poppler,
+	postgis, powerpc-utils, pppd, protobuf-c, pulseaudio,
+	python-bottle, python-django, python-lxml, python3, qt5webkit,
+	redis, rpi-userland, rsyslog, runc, rustc, sconeserver,
+	sg3_utils, shadowsocks-libev, stellarium, suricata, swupdate,
+	tcpreplay, uacme, uclibc, v4l2loopback, webkitgtk,
+	wilc-driver, wine, wpewebkit, xdg-dbus-proxy,
+	xserver_xorg-server, zeromq, zfs, zlib-ng
+
+	Issues resolved (http://bugs.uclibc.org):
+
+	#13796: Problems compiling package gst-plugins-good
 
 2022.05.1, released July 24th, 2022
 
@@ -209,6 +293,40 @@
 	#14721: python-argon2_cffi no longer works
 	#14731: BR2_PACKAGE_IOSTAT
 	#14751: LVM2 Outdated Link
+
+2022.02.5, released August 31st, 2022
+
+	Important / security related fixes.
+
+	dependencies: Ensure 'cmp' is available on the build host.
+
+	pkg-utils: The KCONFIG_ENABLE_OPT macro used to enforce a specific
+	Kconfig option to be enabled (E.G. for kernel options needed by
+	packages) no longer changes a =m (modular) with =y (built in).
+
+	check-host-rpath: Silence readelf warnings when clang is used
+
+	GCC 10.x updated to 10.4.0
+
+	Updated/fixed packages: apg, arm-trusted-firmware, assimp,
+	bayer2rgb-neon, bind, bird, cog, cwiid, diffutils, fluidsynth,
+	freerdp, gcc, glibc, glslsandbox-player, gdk-pixbuf, gnupg2,
+	gtest, i2pd, jack2, jquery-validation, jszip, libbsd, libcamera,
+	libcurl, libest, libiio, libkrb5, libopenssl, libpsl,
+	luasyslog, lxc, mbedtls, mstpd, mutt, netdata, netsniff-ng,
+	nodejs, nvidia-driver, openssl, opkg-utils, paho-mqtt-c,
+	pango, pcsc-lite, perl, pimd, poppler, postgis, powerpc-utils,
+	pppd, protobuf-c, pulseaudio, python-bottle, python-django,
+	python-lxml, python3, qt5webkit, rpi-userland, rsyslog, runc,
+	rustc, sconeserver, sg3_utils, shadowsocks-libev, suricata,
+	tcpreplay, uacme, uclibc, v4l2loopback,, webkitgtk, wine,
+	wpewebkit, xdg-dbus-proxy, xserver_xorg-server, zeromq, zfs,
+	zlib-ng
+
+	Issues resolved (http://bugs.uclibc.org):
+
+	#13796: Problems compiling package gst-plugins-good
+	#14926: package/nodejs: build for host fails with GTEST errors
 
 2022.02.4, released July 28th, 2022
 
@@ -344,7 +462,7 @@
 	gst1-devtools, gst1-libav, gst1-plugins-bad,
 	gst1-plugins-base, gst1-plugins-good, gst1-plugins-ugly,
 	gst1-python, gst1-rtsp-server, gst1-vaapi, gstreamer1,
-	gstreamer1-editing-services, haproxym htop, intel-gmmlib,
+	gstreamer1-editing-services, haproxy, htop, intel-gmmlib,
 	ipmiutil, iwd, jack1, jack2, lftp, libabseil-cpp, libbluray,
 	libcamera-apps, libcoap, libcurl, libest, libgee, libglib2,
 	libgtk3, libiec61850, libkrb5, libminiupnpc, libodb,

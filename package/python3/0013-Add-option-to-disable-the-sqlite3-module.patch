@@ -1,4 +1,4 @@
-From fdef81b6f4280eb26bc620ed8dd3c4dc2018dd29 Mon Sep 17 00:00:00 2001
+From dd2722dec08eb9c72c36313e93661eeca3ad64d8 Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 22 Feb 2017 17:20:45 -0800
 Subject: [PATCH] Add option to disable the sqlite3 module

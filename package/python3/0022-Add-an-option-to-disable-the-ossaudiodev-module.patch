@@ -1,4 +1,4 @@
-From 1773ef327247ff2a6e7ce737637748b67c90419f Mon Sep 17 00:00:00 2001
+From 9bedc56d2a4b8856162650a11c1fcb6ec38f160b Mon Sep 17 00:00:00 2001
 From: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 Date: Wed, 23 Dec 2015 11:51:58 +0100
 Subject: [PATCH] Add an option to disable the ossaudiodev module
